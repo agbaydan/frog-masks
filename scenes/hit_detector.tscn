@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://2p1hjb28esvq"]
+
+[ext_resource type="Script" uid="uid://bxps4qxcecwbw" path="res://scripts/hit_detector.gd" id="1_ing8x"]
+
+[node name="HitDetector" type="Area2D" unique_id=1590260658]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_ing8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665072139]
+debug_color = Color(0.117619894, 0.6376593, 0.33392397, 0.41960785)

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d0huovnai7owx"]
+
+[ext_resource type="PackedScene" uid="uid://b2hwg41e22clj" path="res://scenes/player.tscn" id="1_ynmkm"]
+[ext_resource type="PackedScene" uid="uid://b5ky3glib5whp" path="res://scenes/barrel.tscn" id="2_q25my"]
+[ext_resource type="PackedScene" uid="uid://ocmb73e4i0hp" path="res://scenes/enemy.tscn" id="3_xn5qp"]
+
+[node name="CharContainer" type="Node2D" unique_id=990846411]
+y_sort_enabled = true
+
+[node name="Player" parent="." unique_id=1514605524 instance=ExtResource("1_ynmkm")]
+position = Vector2(116.99999, 290)
+SPEED = 200.0
+
+[node name="Barrel" parent="." unique_id=620347135 instance=ExtResource("2_q25my")]
+position = Vector2(611.99994, 301.99997)
+
+[node name="Enemy" parent="." unique_id=1339234067 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(139.99998, 654.99994)
+player = NodePath("../Player")
+
+[node name="Enemy2" parent="." unique_id=629448864 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(1102.9999, 329.99997)
+player = NodePath("../Player")

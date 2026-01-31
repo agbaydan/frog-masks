@@ -1,15 +1,19 @@
+class_name Character
 extends CharacterBody2D
-
 
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 
 @onready var animation_player := $AnimationPlayer
 @onready var character_sprite := $CharSprite
+@onready var hit_emitter := $HitEmitter
 
 enum State {IDLE, WALK, PUNCH}
 
 var state = State.IDLE
+
+func _ready() -> void:
+	hit_emitter.area_entered.connect(on_hit.bind())
 
 func _physics_process(delta: float) -> void:
 	handle_input()
@@ -27,11 +31,9 @@ func handle_movement():
 	else:
 		velocity = Vector2.ZERO
 		
+# Handled in Player class
 func handle_input():
-	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * SPEED
-	if can_attack() && Input.is_action_just_pressed("punch"):
-		state = State.PUNCH
+	pass
 	
 func handle_animations():
 	if state == State.IDLE:
@@ -44,8 +46,10 @@ func handle_animations():
 func flip_sprites():
 	if velocity.x > 0:
 		character_sprite.flip_h = false
+		hit_emitter.position.x = 10
 	elif velocity.x < 0:
 		character_sprite.flip_h = true
+		hit_emitter.position.x = -10
 
 func can_move():
 	return state == State.IDLE || state == State.WALK
@@ -55,3 +59,7 @@ func can_attack():
 	
 func animation_action_complete():
 	state = State.IDLE
+
+func on_hit(hit_box: HitDetector):
+	var direction = Vector2.LEFT if hit_box.global_position.x < global_position.x else Vector2.RIGHT
+	hit_box.hit.emit(direction)
