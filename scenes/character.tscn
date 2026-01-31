@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhxe8311g4luf"]
 
 [ext_resource type="Script" uid="uid://uesur5yk8hop" path="res://scripts/character.gd" id="1_agfs1"]
+[ext_resource type="PackedScene" uid="uid://bv66gt6t7mgku" path="res://scenes/hit_emitter.tscn" id="2_rkhd4"]
 
 [node name="Character" type="CharacterBody2D" unique_id=1514605524]
 scale = Vector2(10, 10)
@@ -12,3 +13,7 @@ JUMP_VELOCITY = 5.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=780936618]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1230328322]
+
+[node name="HitEmitter" parent="." unique_id=633473502 instance=ExtResource("2_rkhd4")]
+
+[editable path="HitEmitter"]
