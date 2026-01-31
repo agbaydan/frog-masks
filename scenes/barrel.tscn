@@ -36,4 +36,9 @@ collision_layer = 32
 [node name="CollisionShape2D" parent="HitDetector" index="0" unique_id=1665072139]
 shape = SubResource("RectangleShape2D_n8wf6")
 
+[node name="DestroyTimer" type="Timer" parent="." unique_id=1131080243]
+wait_time = 0.5
+
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
+
 [editable path="HitDetector"]

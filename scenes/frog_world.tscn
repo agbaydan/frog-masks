@@ -1,16 +1,9 @@
 [gd_scene format=3 uid="uid://di2o55simn7ud"]
 
-[ext_resource type="PackedScene" uid="uid://b2hwg41e22clj" path="res://scenes/player.tscn" id="1_sgfql"]
-[ext_resource type="PackedScene" uid="uid://b5ky3glib5whp" path="res://scenes/barrel.tscn" id="2_cii66"]
+[ext_resource type="PackedScene" uid="uid://d0huovnai7owx" path="res://scenes/char_container.tscn" id="1_sgfql"]
 
 [node name="FrogWorld" type="Node2D" unique_id=696612062]
 
-[node name="CharContainer" type="Node2D" parent="." unique_id=938171438]
-y_sort_enabled = true
+[node name="CharContainer" parent="." unique_id=990846411 instance=ExtResource("1_sgfql")]
 
-[node name="Player" parent="CharContainer" unique_id=1514605524 instance=ExtResource("1_sgfql")]
-position = Vector2(116.99999, 290)
-SPEED = 200.0
-
-[node name="Barrel" parent="CharContainer" unique_id=620347135 instance=ExtResource("2_cii66")]
-position = Vector2(611.99994, 301.99997)
+[editable path="CharContainer"]

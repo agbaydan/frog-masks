@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uesur5yk8hop" path="res://scripts/character.gd" id="1_agfs1"]
 [ext_resource type="PackedScene" uid="uid://bv66gt6t7mgku" path="res://scenes/hit_emitter.tscn" id="2_rkhd4"]
+[ext_resource type="PackedScene" uid="uid://2p1hjb28esvq" path="res://scenes/hit_detector.tscn" id="3_lrhn5"]
 
 [node name="Character" type="CharacterBody2D" unique_id=1514605524]
 scale = Vector2(10, 10)
@@ -16,4 +17,7 @@ JUMP_VELOCITY = 5.0
 
 [node name="HitEmitter" parent="." unique_id=633473502 instance=ExtResource("2_rkhd4")]
 
+[node name="HitDetector" parent="." unique_id=1590260658 instance=ExtResource("3_lrhn5")]
+
 [editable path="HitEmitter"]
+[editable path="HitDetector"]

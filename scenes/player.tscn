@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bhxe8311g4luf" path="res://scenes/character.tscn" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bfu5sir10htqb" path="res://images/player.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://jnwmmlr3ra4m" path="res://scripts/player.gd" id="2_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 2.2999997
@@ -107,7 +108,7 @@ size = Vector2(11.9, 5.1000004)
 [node name="Player" unique_id=1514605524 instance=ExtResource("1_3vyb7")]
 collision_layer = 2
 collision_mask = 9
-SPEED = 35.0
+script = ExtResource("2_qhqgy")
 JUMP_VELOCITY = -400.0
 
 [node name="CharSprite" parent="." index="0" unique_id=192022235]
@@ -134,3 +135,4 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_g2els")
 
 [editable path="HitEmitter"]
+[editable path="HitDetector"]

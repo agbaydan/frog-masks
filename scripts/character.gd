@@ -1,5 +1,5 @@
+class_name Character
 extends CharacterBody2D
-
 
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
@@ -31,11 +31,9 @@ func handle_movement():
 	else:
 		velocity = Vector2.ZERO
 		
+# Handled in Player class
 func handle_input():
-	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * SPEED
-	if can_attack() && Input.is_action_just_pressed("punch"):
-		state = State.PUNCH
+	pass
 	
 func handle_animations():
 	if state == State.IDLE:
