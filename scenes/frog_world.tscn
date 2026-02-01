@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0huovnai7owx" path="res://scenes/char_container.tscn" id="2_5npmj"]
 [ext_resource type="PackedScene" uid="uid://dgblhekikaala" path="res://scenes/boundaries.tscn" id="2_cii66"]
+[ext_resource type="PackedScene" uid="uid://xqxae0ijgpqf" path="res://scenes/music.tscn" id="3_5npmj"]
 
 [node name="FrogWorld" type="Node2D" unique_id=696612062]
 
@@ -17,8 +18,10 @@ attack_length = 0.0
 knockback_intensity = 0.0
 attack_length = 0.0
 
-[node name="Enemy2" parent="CharContainer" index="3" unique_id=629448864]
+[node name="Enemy2" parent="CharContainer" index="3" unique_id=1432504407]
 knockback_intensity = 0.0
 attack_length = 0.0
+
+[node name="Music" parent="." unique_id=1448297228 instance=ExtResource("3_5npmj")]
 
 [editable path="CharContainer"]

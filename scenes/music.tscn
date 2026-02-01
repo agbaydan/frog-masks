@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://xqxae0ijgpqf"]
+
+[ext_resource type="AudioStream" uid="uid://cbmbpn6mmy034" path="res://music/frogBeatEmUp_2026-01-30.ogg" id="1_05ggv"]
+
+[node name="Music" type="Node2D" unique_id=1448297228]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1441228791]
+stream = ExtResource("1_05ggv")
+autoplay = true
+parameters/looping = true
