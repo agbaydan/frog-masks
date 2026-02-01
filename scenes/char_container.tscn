@@ -21,3 +21,15 @@ player = NodePath("../Player")
 [node name="Enemy2" parent="." unique_id=629448864 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
 position = Vector2(1102.9999, 329.99997)
 player = NodePath("../Player")
+
+[node name="Enemy3" parent="." unique_id=1476546041 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(384, 661)
+player = NodePath("../Player")
+
+[node name="Enemy4" parent="." unique_id=1672858324 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(925.9999, 331)
+player = NodePath("../Player")
+
+[node name="Enemy5" parent="." unique_id=44416086 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(1010, 655)
+player = NodePath("../Player")
