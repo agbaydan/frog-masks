@@ -3,22 +3,28 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
+@export var knockback_intensity : float
+@export var attack_length: float
 
 @onready var animation_player := $AnimationPlayer
 @onready var character_sprite := $CharSprite
 @onready var hit_emitter := $HitEmitter
+@onready var hit_detector := $HitDetector
 
-enum State {IDLE, WALK, PUNCH}
+enum State {IDLE, WALK, PUNCH, HURT}
 
 var state = State.IDLE
+var heading = Vector2.RIGHT
 
 func _ready() -> void:
 	hit_emitter.area_entered.connect(on_hit.bind())
+	hit_detector.hit.connect(on_get_hit.bind())
 
 func _physics_process(delta: float) -> void:
 	handle_input()
 	handle_movement()
 	handle_animations()
+	set_heading()
 	flip_sprites()
 	move_and_slide()
 
@@ -42,9 +48,14 @@ func handle_animations():
 		animation_player.play("walk")
 	elif state == State.PUNCH:
 		animation_player.play("punch")
+	elif state == State.HURT:
+		animation_player.play("hurt")
+		
+func set_heading():
+	pass
 
 func flip_sprites():
-	if velocity.x > 0:
+	if heading == Vector2.RIGHT:
 		character_sprite.flip_h = false
 		hit_emitter.position.x = 10
 	elif velocity.x < 0:
@@ -63,3 +74,10 @@ func animation_action_complete():
 func on_hit(hit_box: HitDetector):
 	var direction = Vector2.LEFT if hit_box.global_position.x < global_position.x else Vector2.RIGHT
 	hit_box.hit.emit(direction)
+	
+func on_get_hit(direction: Vector2):
+	velocity = direction * knockback_intensity
+	state = State.HURT
+	
+func on_destroy():
+	queue_free()
