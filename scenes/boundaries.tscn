@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://dgblhekikaala"]
 
+[ext_resource type="Texture2D" uid="uid://c51ka4rvbmvwh" path="res://images/swamp_bg2.png" id="1_2jmew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jmew"]
+size = Vector2(1469.375, 512.1875)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5uuo"]
 size = Vector2(1469.375, 32.375)
 
@@ -8,12 +13,18 @@ size = Vector2(93, 777)
 
 [node name="Node2D" type="Node2D" unique_id=1605061411]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1778595551]
+position = Vector2(634, 357.99997)
+scale = Vector2(0.8354343, 0.7442974)
+skew = 0.7155849
+texture = ExtResource("1_2jmew")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=680683000]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1632089426]
-position = Vector2(672, 14)
-shape = SubResource("RectangleShape2D_e5uuo")
+position = Vector2(672, 253.90625)
+shape = SubResource("RectangleShape2D_2jmew")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2140336375]
 collision_mask = 2
@@ -23,12 +34,14 @@ position = Vector2(640, 736)
 shape = SubResource("RectangleShape2D_e5uuo")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1370817754]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1019587686]
 position = Vector2(-51, 357)
 shape = SubResource("RectangleShape2D_nnsk1")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1297483133]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1466545619]
 position = Vector2(1326, 356)

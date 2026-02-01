@@ -11,16 +11,35 @@
 [node name="CharContainer" parent="." unique_id=990846411 instance=ExtResource("2_5npmj")]
 
 [node name="Player" parent="CharContainer" index="0" unique_id=1514605524]
+position = Vector2(186, 552)
+scale = Vector2(10, 10)
 knockback_intensity = 0.0
 attack_length = 0.0
 
+[node name="Barrel" parent="CharContainer" index="1" unique_id=620347135]
+visible = false
+
 [node name="Enemy" parent="CharContainer" index="2" unique_id=1339234067]
+position = Vector2(601, 568.00006)
 knockback_intensity = 0.0
 attack_length = 0.0
 
 [node name="Enemy2" parent="CharContainer" index="3" unique_id=1432504407]
+position = Vector2(33.99999, 248.00003)
 knockback_intensity = 0.0
 attack_length = 0.0
+
+[node name="Enemy3" parent="CharContainer" index="4" unique_id=1020659040]
+position = Vector2(-170, 665)
+
+[node name="Enemy5" parent="CharContainer" index="6" unique_id=1007986810]
+position = Vector2(617, 256.0001)
+
+[node name="Enemy6" parent="CharContainer" index="7" unique_id=867186656]
+position = Vector2(975, 463.00006)
+
+[node name="Enemy7" parent="CharContainer" index="8" unique_id=2043237918]
+position = Vector2(1109.0001, 201.00009)
 
 [node name="Music" parent="." unique_id=1448297228 instance=ExtResource("3_5npmj")]
 
