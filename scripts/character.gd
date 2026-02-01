@@ -14,6 +14,7 @@ extends CharacterBody2D
 enum State {IDLE, WALK, PUNCH, HURT}
 
 var state = State.IDLE
+var heading = Vector2.RIGHT
 
 func _ready() -> void:
 	hit_emitter.area_entered.connect(on_hit.bind())
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	handle_input()
 	handle_movement()
 	handle_animations()
+	set_heading()
 	flip_sprites()
 	move_and_slide()
 
@@ -49,9 +51,11 @@ func handle_animations():
 	elif state == State.HURT:
 		animation_player.play("hurt")
 		
+func set_heading():
+	pass
 
 func flip_sprites():
-	if velocity.x > 0:
+	if heading == Vector2.RIGHT:
 		character_sprite.flip_h = false
 		hit_emitter.position.x = 10
 	elif velocity.x < 0:

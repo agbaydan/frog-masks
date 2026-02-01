@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dgblhekikaala" path="res://scenes/boundaries.tscn" id="2_cii66"]
 
 [node name="FrogWorld" type="Node2D" unique_id=696612062]
-position = Vector2(116.99999, 290)
-SPEED = 200.0
 
 [node name="Boundaries" parent="." unique_id=1605061411 instance=ExtResource("2_cii66")]
 

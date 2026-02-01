@@ -8,6 +8,12 @@ func handle_input():
 	velocity = direction * SPEED
 	if can_attack() && Input.is_action_just_pressed("punch"):
 		state = State.PUNCH
+		
+func set_heading():
+	if velocity.x > 0:
+		heading = Vector2.RIGHT
+	elif velocity.x < 0:
+		heading = Vector2.LEFT
 
 func reserve_slot(enemy: Enemy) -> EnemySlot:
 	var available_slots := enemy_slots.filter(
