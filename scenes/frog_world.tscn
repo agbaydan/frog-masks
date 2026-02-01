@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://di2o55simn7ud"]
 
 [ext_resource type="PackedScene" uid="uid://b2hwg41e22clj" path="res://scenes/player.tscn" id="1_sgfql"]
-[ext_resource type="PackedScene" uid="uid://dgblhekikaala" path="res://scenes/world.tscn" id="2_cii66"]
+[ext_resource type="PackedScene" uid="uid://dgblhekikaala" path="res://scenes/boundaries.tscn" id="2_cii66"]
 
 [node name="FrogWorld" type="Node2D" unique_id=696612062]
 
 [node name="Player" parent="." unique_id=1514605524 instance=ExtResource("1_sgfql")]
 position = Vector2(116.99999, 290)
-collision_layer = 2
 SPEED = 200.0
 
-[node name="WallsNode2D" parent="." unique_id=1605061411 instance=ExtResource("2_cii66")]
+[node name="Boundaries" parent="." unique_id=1605061411 instance=ExtResource("2_cii66")]
