@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgblhekikaala"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5uuo"]
-size = Vector2(1920.75, 32.375)
+size = Vector2(1469.375, 32.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
 size = Vector2(93, 777)
@@ -12,14 +12,14 @@ size = Vector2(93, 777)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1632089426]
-position = Vector2(864, 15.8125)
+position = Vector2(672, 14)
 shape = SubResource("RectangleShape2D_e5uuo")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2140336375]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1307041625]
-position = Vector2(878, 735)
+position = Vector2(640, 736)
 shape = SubResource("RectangleShape2D_e5uuo")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1370817754]
