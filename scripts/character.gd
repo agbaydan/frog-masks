@@ -76,7 +76,6 @@ func on_hit(hit_box: HitDetector):
 	hit_box.hit.emit(direction)
 	
 func on_get_hit(direction: Vector2):
-	print("On_Get_Hit")
 	velocity = direction * knockback_intensity
 	state = State.HURT
 	

@@ -186,11 +186,23 @@ position = Vector2(15, 3)
 [node name="EnemySlots2" parent="EnemySlots" index="1" unique_id=1462636483 instance=ExtResource("4_dqkch")]
 position = Vector2(15, -3)
 
-[node name="EnemySlots3" parent="EnemySlots" index="2" unique_id=1631048423 instance=ExtResource("4_dqkch")]
+[node name="EnemySlots5" parent="EnemySlots" index="2" unique_id=1042847697 instance=ExtResource("4_dqkch")]
+position = Vector2(27, 8)
+
+[node name="EnemySlots6" parent="EnemySlots" index="3" unique_id=1474136787 instance=ExtResource("4_dqkch")]
+position = Vector2(24, -9)
+
+[node name="EnemySlots3" parent="EnemySlots" index="4" unique_id=1631048423 instance=ExtResource("4_dqkch")]
 position = Vector2(-15, 3)
 
-[node name="EnemySlots4" parent="EnemySlots" index="3" unique_id=852805393 instance=ExtResource("4_dqkch")]
+[node name="EnemySlots4" parent="EnemySlots" index="5" unique_id=852805393 instance=ExtResource("4_dqkch")]
 position = Vector2(-15, -3)
+
+[node name="EnemySlots7" parent="EnemySlots" index="6" unique_id=1983349855 instance=ExtResource("4_dqkch")]
+position = Vector2(-27, 8)
+
+[node name="EnemySlots8" parent="EnemySlots" index="7" unique_id=1524595773 instance=ExtResource("4_dqkch")]
+position = Vector2(-24, -9)
 
 [editable path="HitEmitter"]
 [editable path="HitDetector"]

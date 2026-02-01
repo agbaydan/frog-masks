@@ -8,13 +8,48 @@
 y_sort_enabled = true
 
 [node name="Player" parent="." unique_id=1514605524 instance=ExtResource("1_ynmkm")]
-position = Vector2(116.99999, 290)
+position = Vector2(125, 293)
 SPEED = 200.0
 
 [node name="Barrel" parent="." unique_id=620347135 instance=ExtResource("2_q25my")]
 position = Vector2(611.99994, 301.99997)
 
 [node name="Enemy" parent="." unique_id=1339234067 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
-position = Vector2(758.99994, 430.00006)
-attack_cooldown = 0
+position = Vector2(596, 671)
+player = NodePath("../Player")
+
+[node name="Enemy2" parent="." unique_id=1432504407 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(-110.999985, 541)
+player = NodePath("../Player")
+
+[node name="Enemy3" parent="." unique_id=1020659040 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(-101.999985, 254.00003)
+player = NodePath("../Player")
+
+[node name="Enemy4" parent="." unique_id=1303321785 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(827.99994, 693)
+player = NodePath("../Player")
+
+[node name="Enemy5" parent="." unique_id=1007986810 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(985.99994, 246.00003)
+player = NodePath("../Player")
+
+[node name="Enemy6" parent="." unique_id=867186656 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(1179.9999, 450)
+player = NodePath("../Player")
+
+[node name="Enemy7" parent="." unique_id=2043237918 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(1172.9999, 265.00003)
+player = NodePath("../Player")
+
+[node name="Enemy8" parent="." unique_id=1249853457 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(300, 701)
+player = NodePath("../Player")
+
+[node name="Enemy9" parent="." unique_id=557435583 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(84, 705)
+player = NodePath("../Player")
+
+[node name="Enemy10" parent="." unique_id=1947861023 node_paths=PackedStringArray("player") instance=ExtResource("3_xn5qp")]
+position = Vector2(1194.9999, 695)
 player = NodePath("../Player")
