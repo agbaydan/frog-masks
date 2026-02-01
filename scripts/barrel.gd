@@ -25,5 +25,4 @@ func on_hit(direction: Vector2):
 	velocity = direction * knockback_intensity
 
 func _on_destroy_timer_timeout() -> void:
-	print("DESTROY")
 	queue_free()

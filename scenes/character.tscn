@@ -8,6 +8,8 @@
 scale = Vector2(10, 10)
 script = ExtResource("1_agfs1")
 JUMP_VELOCITY = 5.0
+knockback_intensity = 200.0
+attack_length = 10.0
 
 [node name="CharSprite" type="Sprite2D" parent="." unique_id=192022235]
 

@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://di2o55simn7ud"]
 
-[ext_resource type="PackedScene" uid="uid://b2hwg41e22clj" path="res://scenes/player.tscn" id="1_sgfql"]
+[ext_resource type="PackedScene" uid="uid://d0huovnai7owx" path="res://scenes/char_container.tscn" id="2_5npmj"]
 [ext_resource type="PackedScene" uid="uid://dgblhekikaala" path="res://scenes/boundaries.tscn" id="2_cii66"]
 
 [node name="FrogWorld" type="Node2D" unique_id=696612062]
 
-[node name="Player" parent="." unique_id=1514605524 instance=ExtResource("1_sgfql")]
-position = Vector2(116.99999, 290)
-SPEED = 200.0
-
 [node name="Boundaries" parent="." unique_id=1605061411 instance=ExtResource("2_cii66")]
+
+[node name="CharContainer" parent="." unique_id=990846411 instance=ExtResource("2_5npmj")]
+
+[node name="Player" parent="CharContainer" index="0" unique_id=1514605524]
+knockback_intensity = 0.0
+attack_length = 0.0
+
+[node name="Enemy" parent="CharContainer" index="2" unique_id=1339234067]
+knockback_intensity = 0.0
+attack_length = 0.0
+
+[node name="Enemy2" parent="CharContainer" index="3" unique_id=629448864]
+knockback_intensity = 0.0
+attack_length = 0.0
+
+[editable path="CharContainer"]

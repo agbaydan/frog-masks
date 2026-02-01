@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhxe8311g4luf" path="res://scenes/character.tscn" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bfu5sir10htqb" path="res://images/player.png" id="2_g2els"]
 [ext_resource type="Script" uid="uid://jnwmmlr3ra4m" path="res://scripts/player.gd" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://c075e5gs0ra7h" path="res://scenes/enemy_slot.tscn" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 2.2999997
@@ -33,6 +34,37 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qlg0r"]
+resource_name = "hurt"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [72, 80, 82]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_destroy"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_dqkch"]
@@ -98,12 +130,16 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqkch"]
 _data = {
 &"RESET": SubResource("Animation_g2els"),
+&"hurt": SubResource("Animation_qlg0r"),
 &"punch": SubResource("Animation_dqkch"),
 &"walk": SubResource("Animation_qhqgy")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(11.9, 5.1000004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(8.700001, 13.850002)
 
 [node name="Player" unique_id=1514605524 instance=ExtResource("1_3vyb7")]
 collision_layer = 2
@@ -133,6 +169,40 @@ collision_mask = 32
 [node name="CollisionShape2D" parent="HitEmitter" index="0" unique_id=806202553]
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="HitDetector" parent="." index="4" unique_id=1590260658]
+collision_layer = 16
+
+[node name="CollisionShape2D" parent="HitDetector" index="0" unique_id=1665072139]
+position = Vector2(0.7499999, -16.324995)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="EnemySlots" type="Node2D" parent="." index="5" unique_id=864195277]
+
+[node name="EnemySlots" parent="EnemySlots" index="0" unique_id=703369384 instance=ExtResource("4_dqkch")]
+position = Vector2(15, 3)
+
+[node name="EnemySlots2" parent="EnemySlots" index="1" unique_id=1462636483 instance=ExtResource("4_dqkch")]
+position = Vector2(15, -3)
+
+[node name="EnemySlots5" parent="EnemySlots" index="2" unique_id=1042847697 instance=ExtResource("4_dqkch")]
+position = Vector2(27, 8)
+
+[node name="EnemySlots6" parent="EnemySlots" index="3" unique_id=1474136787 instance=ExtResource("4_dqkch")]
+position = Vector2(24, -9)
+
+[node name="EnemySlots3" parent="EnemySlots" index="4" unique_id=1631048423 instance=ExtResource("4_dqkch")]
+position = Vector2(-15, 3)
+
+[node name="EnemySlots4" parent="EnemySlots" index="5" unique_id=852805393 instance=ExtResource("4_dqkch")]
+position = Vector2(-15, -3)
+
+[node name="EnemySlots7" parent="EnemySlots" index="6" unique_id=1983349855 instance=ExtResource("4_dqkch")]
+position = Vector2(-27, 8)
+
+[node name="EnemySlots8" parent="EnemySlots" index="7" unique_id=1524595773 instance=ExtResource("4_dqkch")]
+position = Vector2(-24, -9)
 
 [editable path="HitEmitter"]
 [editable path="HitDetector"]
